@@ -11,5 +11,16 @@ type Employee {
 }
 
 type Query {
-  getAllEmployees: Employee!
+  getAllEmployees: [Employee!]!
+}
+
+type Mutation {
+  createEmployee(employeeInput: EmployeeCreateDTO!): Employee!
+}
+
+input EmployeeCreateDTO {
+  firstName: String!
+  lastName: String!
+  designation: String!
+  city: String
 }
